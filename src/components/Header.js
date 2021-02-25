@@ -1,5 +1,6 @@
 import React from "react"
-import { Navbar } from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap"
+import { LinkContainer } from "react-router-bootstrap"
 import "../style/mainStyle.scss"
 
 const Header = () => {
@@ -10,7 +11,12 @@ const Header = () => {
 				expand="lg"
 				className="header"
 			>
-				<Navbar.Brand>Snake Game</Navbar.Brand>
+				<Navbar.Brand>SnakeGame</Navbar.Brand>
+				<Nav>
+					<LinkContainer to="/">
+						<Nav.Link>User</Nav.Link>
+					</LinkContainer>
+				</Nav>
 			</Navbar>
 		</div>
 	)
