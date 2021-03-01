@@ -1,5 +1,11 @@
+import axios from "axios"
 import React, { useState, useEffect } from "react"
 
+const geetingProducts = async (req, res) => {
+	const text = await axios.get("http://localhost:5000/")
+	console.log(text)
+}
+geetingProducts()
 const BestScore = ({ score }) => {
 	const theBestHistoryScore = localStorage.getItem("score")
 

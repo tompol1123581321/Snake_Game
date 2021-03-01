@@ -1,4 +1,5 @@
 import React from "react"
+import { useState } from "react"
 import {
 	Button,
 	Container,
@@ -10,6 +11,8 @@ import "../style/mainStyle.scss"
 
 const LoginScreen = () => {
 	const history = useHistory()
+	const [user, setUser] = useState("")
+	const [pass, setPass] = useState("")
 	return (
 		<div
 			className="mainScreen"
@@ -29,8 +32,13 @@ const LoginScreen = () => {
 					>
 						<Form.Label>Username</Form.Label>
 						<Form.Control
+							onChange={(e) => {
+								setUser(e.target.value)
+							}}
+							value={user}
 							type="username"
 							placeholder="Username"
+							required={true}
 						/>
 					</Form.Group>
 
@@ -40,8 +48,13 @@ const LoginScreen = () => {
 					>
 						<Form.Label>Password</Form.Label>
 						<Form.Control
+							onChange={(e) => {
+								setPass(e.target.value)
+							}}
+							value={pass}
 							type="password"
 							placeholder="Password"
+							required={true}
 						/>
 					</Form.Group>
 					<Row
